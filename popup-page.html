@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1>我是子窗口</h1>
+  <button id="btn3">向父窗口传递信息</button>
+  <script>
+    // 父子窗口通信
+    var btn3 = this.document.querySelector('#btn3')
+    btn3.onclick = function (e) {
+      e.preventDefault()
+      window.opener.postMessage('我是子窗口传递过来的信息')
+    }
+  </script>
+</body>
+</html>
